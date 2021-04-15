@@ -63,7 +63,7 @@ echo "Setting up Roles required for Notice of Change..."
 echo ""
 echo "Setting up Users..."
 ./create-user.sh "ccd-import@fake.hmcts.net" "CCD" "Import" "London01" "ccd-import" "[{ \"code\": \"ccd-import\"}]"
-./create-user.sh "${IA_SYSTEM_USERNAME}" "${USER_PREFIX}System" "user" "${IA_SYSTEM_PASSWORD}" "caseworker" "[{ \"code\": \"caseworker-ia\"}, { \"code\": \"caseworker-ia-system\"}]"
+./create-user.sh "${IA_SYSTEM_USERNAME}" "${USER_PREFIX}System" "user" "${IA_SYSTEM_PASSWORD}" "caseworker" "[{ \"code\": \"caseworker-ia\"}, { \"code\": \"caseworker-ia-system\"}, { \"code\": \"caseworker-ia-system-access\"}]"
 ./create-user.sh "${RAS_SYSTEM_USERNAME}" "${USER_PREFIX}RAS System" "user" "${RAS_SYSTEM_PASSWORD}" "caseworker" "[{ \"code\": \"caseworker-ia\"}, { \"code\": \"caseworker-ras-validation\"}]"
 ./create-user.sh "${TEST_CASEOFFICER_USERNAME}" "${IA_USER_PREFIX}Case" "Officer" "${TEST_CASEOFFICER_PASSWORD}" "caseworker" "[{ \"code\": \"caseworker-ia\"}, { \"code\": \"caseworker-ia-caseofficer\"}, { \"code\": \"payments\"}]"
 ./create-user.sh "${TEST_JUDICIARY_USERNAME}" "${IA_USER_PREFIX}Tribunal" "Judge" "${TEST_JUDICIARY_PASSWORD}" "caseworker" "[{ \"code\": \"caseworker-ia\"}, { \"code\": \"caseworker-ia-judiciary\"}]"
@@ -93,7 +93,6 @@ echo "Setting up Users..."
 ./create-user.sh "approver-caseworker@fake.hmcts.net" "${USER_PREFIX}Approver-System" "user" "London22" "caseworker" "[{ \"code\": \"caseworker-approver\"}, { \"code\": \"prd-aac-system\"}]"
 ./create-user.sh "approver-noc@fake.com" "${USER_PREFIX}Approver-NoC" "user" "Pa55word11" "caseworker" "[{ \"code\": \"caseworker-approver\"}, { \"code\": \"prd-aac-system\"}]"
 
-./create-user.sh "${IA_SYSTEM_ACCESS_USERNAME}" "${USER_PREFIX}System" "Access" "${IA_SYSTEM_ACCESS_PASSWORD}" "caseworker" "[{ \"code\": \"caseworker-ia\"}, { \"code\": \"caseworker-ia-system-access\"}]"
 
 # Refresh cache
 echo ""
@@ -113,6 +112,7 @@ SERVICE_TOKEN="$(sh ./idam-service-token.sh)"
 ./register-role.sh "caseworker-ia-judiciary" "$USER_TOKEN" "$SERVICE_TOKEN"
 ./register-role.sh "caseworker-ia-legalrep-solicitor" "$USER_TOKEN" "$SERVICE_TOKEN"
 ./register-role.sh "caseworker-ia-system" "$USER_TOKEN" "$SERVICE_TOKEN"
+./register-role.sh "caseworker-ia-system-access" "$USER_TOKEN" "$SERVICE_TOKEN"
 ./register-role.sh "caseworker-ras-validation" "$USER_TOKEN" "$SERVICE_TOKEN"
 ./register-role.sh "caseworker-ia-admofficer" "$USER_TOKEN" "$SERVICE_TOKEN"
 ./register-role.sh "caseworker-ia-homeofficeapc" "$USER_TOKEN" "$SERVICE_TOKEN"
@@ -150,8 +150,6 @@ SERVICE_TOKEN="$(sh ./idam-service-token.sh)"
 ./register-role.sh "prd-aac-system" "$USER_TOKEN" "$SERVICE_TOKEN"
 
 ./register-role.sh "caseworker-wa-task-configuration" "$USER_TOKEN" "$SERVICE_TOKEN"
-
-./register-role.sh "caseworker-ia-system-access" "$USER_TOKEN" "$SERVICE_TOKEN"
 
 echo ""
 echo "Setting CCD Roles and Users is finished"
