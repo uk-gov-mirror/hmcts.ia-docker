@@ -26,6 +26,7 @@ echo "Setting up Roles..."
 ./create-role.sh "caseworker-ia-iacjudge"
 ./create-role.sh "payments"
 ./create-role.sh "caseworker-wa-task-configuration"
+./create-role.sh "caseworker-ia-system-access"
 
 # Roles required for XUI
 echo ""
@@ -92,6 +93,8 @@ echo "Setting up Users..."
 ./create-user.sh "approver-caseworker@fake.hmcts.net" "${USER_PREFIX}Approver-System" "user" "London22" "caseworker" "[{ \"code\": \"caseworker-approver\"}, { \"code\": \"prd-aac-system\"}]"
 ./create-user.sh "approver-noc@fake.com" "${USER_PREFIX}Approver-NoC" "user" "Pa55word11" "caseworker" "[{ \"code\": \"caseworker-approver\"}, { \"code\": \"prd-aac-system\"}]"
 
+./create-user.sh "${IA_SYSTEM_ACCESS_USERNAME}" "${USER_PREFIX}System" "Access" "${IA_SYSTEM_ACCESS_PASSWORD}" "caseworker" "[{ \"code\": \"caseworker-ia\"}, { \"code\": \"caseworker-ia-system-access\"}]"
+
 # Refresh cache
 echo ""
 echo "Refreshing cache..."
@@ -147,6 +150,8 @@ SERVICE_TOKEN="$(sh ./idam-service-token.sh)"
 ./register-role.sh "prd-aac-system" "$USER_TOKEN" "$SERVICE_TOKEN"
 
 ./register-role.sh "caseworker-wa-task-configuration" "$USER_TOKEN" "$SERVICE_TOKEN"
+
+./register-role.sh "caseworker-ia-system-access" "$USER_TOKEN" "$SERVICE_TOKEN"
 
 echo ""
 echo "Setting CCD Roles and Users is finished"

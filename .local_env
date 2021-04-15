@@ -80,6 +80,9 @@ export TEST_LAW_FIRM_ORG_SUCCESS_PASSWORD=London08
 export TEST_LAW_FIRM_ORG_DELETED_USERNAME=ia-law-firm-deleted@fake.hmcts.net
 export TEST_LAW_FIRM_ORG_DELETED_PASSWORD=London09
 
+export IA_SYSTEM_ACCESS_USERNAME=ia-system-access@fake.hmcts.net
+export IA_SYSTEM_ACCESS_PASSWORD=London05
+
 export IDAM_ADMIN_USER=idamOwner@hmcts.net
 export IDAM_URL=http://localhost:5000
 export IA_IDAM_ID=ccd_gateway
@@ -94,8 +97,8 @@ export IA_RESPONDENT_REVIEW_DIRECTION_EMAIL=respondentReviewDirection@example.co
 export IA_RESPONDENT_NON_STANDARD_DIRECTION_UNTIL_LISTING_EMAIL=respondentNonStandardDirectionUntilListing@example.com
 #export DM_URL=http://dm-store:4506
 # Docmosis
-export DOCMOSIS_ENDPOINT=https://docmosis-development.platform.hmcts.net
-export DOCMOSIS_URL=https://docmosis-development.platform.hmcts.net/rs
+export DOCMOSIS_ENDPOINT=https://docmosis.aat.platform.hmcts.net
+export DOCMOSIS_URL=https://docmosis.aat.platform.hmcts.net/rs
 # Docmosis on localhost
 #export DOCMOSIS_ACCESS_KEY={your licence key}
 #export DOCMOSIS_ENDPOINT=http://localhost:8091
