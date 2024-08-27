@@ -85,5 +85,8 @@ SERVICE_TOKEN="$(sh ./idam-service-token.sh)"
 ./register-role.sh "hearing-viewer" "$USER_TOKEN" "$SERVICE_TOKEN"
 ./register-role.sh "listed-hearing-viewer" "$USER_TOKEN" "$SERVICE_TOKEN"
 
+# Required for Next Hearing Info batch update
+./register-role.sh "next-hearing-date-admin" "$USER_TOKEN" "$SERVICE_TOKEN"
+
 echo ""
 echo "Registering CCD Roles has completed"
