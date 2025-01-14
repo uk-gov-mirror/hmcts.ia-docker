@@ -80,6 +80,8 @@ SERVICE_TOKEN="$(sh ./idam-service-token.sh)"
 ./register-role.sh "caseworker-ia-homeofficebail" "$USER_TOKEN" "$SERVICE_TOKEN"
 
 ./register-role.sh "ia_caselinks_profile" "$USER_TOKEN" "$SERVICE_TOKEN"
+./register-role.sh "caseworker-ia-rparobot" "$USER_TOKEN" "$SERVICE_TOKEN"
+./register-role.sh "caseworker-ia-internal" "$USER_TOKEN" "$SERVICE_TOKEN"
 
 ./register-role.sh "hearing-manager" "$USER_TOKEN" "$SERVICE_TOKEN"
 ./register-role.sh "hearing-viewer" "$USER_TOKEN" "$SERVICE_TOKEN"
