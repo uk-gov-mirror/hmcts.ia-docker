@@ -32,6 +32,8 @@ services:
       SERVICES_EM_ANNO_API: http://ccd-api-gateway:3453
       SERVICES_CASE_CASEWORKER_API: http://wiremock:8080
       SERVICES_PRD_LOCATION_API: http://wiremock:8080
+      SERVICES_LOCATION_REF_API_URL: http://wiremock:8080
+      SERVICES_LOCATION_API: http://wiremock:8080
 
       FEATURE_REDIS_ENABLED: "false"
       FEATURE_APP_INSIGHTS_ENABLED: "false"
