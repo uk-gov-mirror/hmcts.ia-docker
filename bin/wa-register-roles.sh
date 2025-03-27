@@ -90,5 +90,7 @@ SERVICE_TOKEN="$(sh ./idam-service-token.sh)"
 # Required for Next Hearing Info batch update
 ./register-role.sh "next-hearing-date-admin" "$USER_TOKEN" "$SERVICE_TOKEN"
 
+./register-role.sh "cft-ttl-manager" "$USER_TOKEN" "$SERVICE_TOKEN"
+
 echo ""
 echo "Registering CCD Roles has completed"
