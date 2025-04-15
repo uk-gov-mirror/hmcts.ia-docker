@@ -12,3 +12,4 @@ services:
     environment:
       DOCMOSIS_KEY: "${DOCMOSIS_ACCESS_KEY}"
       DOCMOSIS_SITE: "${DOCMOSIS_SITE}"
+      DOCMOSIS_ADMINPW: "${DOCMOSIS_ADMIN_PASSWORD:-admin}"
